@@ -35,7 +35,7 @@ function Vs-DevEnv {
 
 if (Get-Command Get-CimInstance -errorAction SilentlyContinue)
 {
-    $VsInfo = Get-CimInstance MSFT_VSInstance -Namespace root/cimv2/vs
+    $VsInfo = Get-CimInstance MSFT_VSInstance -Namespace root/cimv2/vs -WarningAction:SilentlyContinue
 
     if ($VsInfo -ne $null) {
         function Vs-DevEnv {
