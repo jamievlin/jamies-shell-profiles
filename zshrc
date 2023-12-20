@@ -19,6 +19,7 @@ unsetopt autocd
 test -f $HOME/.aliases && source $HOME/.aliases
 test -f $HOME/.envvars && source $HOME/.envvars
 test -f $HOME/.zshrc_settings && source $HOME/.zshrc_settings
+test -f $HOME/.addr_settings && source $HOME/.addr_settings
 
 isWsl=false
 if [[ $(grep -i microsoft /proc/version) ]]; then
