@@ -54,3 +54,7 @@ if (Get-Command gpg-connect-agent -errorAction SilentlyContinue) {
 if (Test-Path -Path "$env:VCPKG_ROOT") {
     Import-Module "${env:VCPKG_ROOT}\scripts\posh-vcpkg"
 }
+
+if (Test-Path -Path "$env:USERPROFILE/Additional-PwshSettings.ps1") {
+    . $env:USERPROFILE/Additional-PwshSettings.ps1
+}
