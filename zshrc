@@ -66,11 +66,10 @@ if [ -f "$ZSH_GIT_PROMPT_REPO/zshrc.sh" ]; then
 
     if [ "${ZSH_GIT_PROMPT_USE_SIMPLE_SYMBOLS}" -eq "1" ]; then
         # see https://www.compart.com/en/unicode/U+2715
-        ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}\u2715"
-        ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●"
-        ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}+"
+        ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{\u2715%G%}"
+        ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{+%G%}"
         # see https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block)
-        ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}\u25b3"
+        ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}%{\u25b3%G%}"
 
         # see https://en.wikipedia.org/wiki/Check_mark
         ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}\u2713"
