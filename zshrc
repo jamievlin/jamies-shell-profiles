@@ -63,6 +63,19 @@ function parse_git_branch {
 
 if [ -f "$ZSH_GIT_PROMPT_REPO/zshrc.sh" ]; then
     source "$ZSH_GIT_PROMPT_REPO/zshrc.sh"
+
+    if [ "${ZSH_GIT_PROMPT_USE_SIMPLE_SYMBOLS}" -eq "1" ]; then
+        # see https://www.compart.com/en/unicode/U+2715
+        ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}\u2715"
+        ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●"
+        ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}+"
+        # see https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block)
+        ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}\u25b3"
+
+        # see https://en.wikipedia.org/wiki/Check_mark
+        ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}\u2713"
+    fi
+
     function git_st_wrapper {
         if isWinDir; then
             parse_git_branch
