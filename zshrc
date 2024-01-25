@@ -64,7 +64,7 @@ function parse_git_branch {
 if [ -f "$ZSH_GIT_PROMPT_REPO/zshrc.sh" ]; then
     source "$ZSH_GIT_PROMPT_REPO/zshrc.sh"
 
-    if [ "${ZSH_GIT_PROMPT_USE_SIMPLE_SYMBOLS}" -eq "1" ]; then
+    if [ "${ZSH_GIT_PROMPT_USE_DEFAULT_SYMBOLS:-0}" -ne "1" ]; then
         # see https://www.compart.com/en/unicode/U+2715
         ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{\u2715%G%}"
         ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{+%G%}"
