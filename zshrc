@@ -125,3 +125,8 @@ if [ -d "$VCPKG_ROOT" ]; then
     export PATH=$PATH:$VCPKG_ROOT
     source "$VCPKG_ROOT/scripts/vcpkg_completion.zsh"
 fi
+
+# nvm
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+	\. "$NVM_DIR/nvm.sh"
+fi
