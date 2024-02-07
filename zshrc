@@ -101,6 +101,7 @@ alias woman='man'
 alias girl='man'
 
 alias gb='git branch --show-current 2>/dev/null'
+alias gbr='git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null'
 alias ll='ls -l'
 alias llh='ls -lh'
 
