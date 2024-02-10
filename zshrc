@@ -128,5 +128,6 @@ fi
 
 # nvm
 if [ -s "$NVM_DIR/nvm.sh" ]; then
+	export NVM_SYMLINK_CURRENT="${NVM_SYMLINK_CURRENT:-true}"
 	\. "$NVM_DIR/nvm.sh"
 fi
