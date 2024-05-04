@@ -131,3 +131,9 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
 	export NVM_SYMLINK_CURRENT="${NVM_SYMLINK_CURRENT:-true}"
 	\. "$NVM_DIR/nvm.sh"
 fi
+
+# dotnet tools
+if [ -d "$LOCAL_DOTNET_TOOLS" ]; then
+	export PATH="$PATH:$LOCAL_DOTNET_TOOLS"
+fi
+
