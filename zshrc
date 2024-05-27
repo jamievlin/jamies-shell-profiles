@@ -21,6 +21,13 @@ test -f $HOME/.envvars && source $HOME/.envvars
 test -f $HOME/.zshrc_settings && source $HOME/.zshrc_settings
 test -f $HOME/.addr_settings && source $HOME/.addr_settings
 
+# /etc/profile
+if [ "${ENABLE_ETC_PROFILE:-1}" -ne "0" ]; then
+    if [ -f "/etc/profile" ]; then
+        source /etc/profile
+    fi
+fi
+
 isWsl=false
 if [[ $(grep -i microsoft /proc/version) ]]; then
     isWsl=true
