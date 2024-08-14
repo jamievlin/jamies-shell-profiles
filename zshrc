@@ -144,3 +144,9 @@ if [ -d "$LOCAL_DOTNET_TOOLS" ]; then
 	export PATH="$PATH:$LOCAL_DOTNET_TOOLS"
 fi
 
+# pyenv
+if [ -d "$PYENV_ROOT" ]; then
+	export PATH="$PATH:$PYENV_ROOT/bin"
+	eval "$(pyenv init -)"
+fi
+
