@@ -58,3 +58,9 @@ if (Test-Path -Path "$env:VCPKG_ROOT") {
 if (Test-Path -Path "$env:USERPROFILE/Additional-PwshSettings.ps1") {
     . $env:USERPROFILE/Additional-PwshSettings.ps1
 }
+
+# fnm
+if (Get-Command fnm -errorAction SilentlyContinue)
+{
+    fnm -env --use-on-cd --shell power-shell | Out-String | Invoke-Expression
+}
