@@ -62,5 +62,5 @@ if (Test-Path -Path "$env:USERPROFILE/Additional-PwshSettings.ps1") {
 # fnm
 if (Get-Command fnm -errorAction SilentlyContinue)
 {
-    fnm -env --use-on-cd --shell power-shell | Out-String | Invoke-Expression
+    fnm env --use-on-cd --shell power-shell | Out-String | Invoke-Expression
 }
