@@ -151,6 +151,6 @@ if [ -d "$PYENV_ROOT" ]; then
 fi
 
 # git subrepo
-if [ -d "$GIT_SUBREPO_ROOT" ]; then
-    source "$GIT_SUBREPO_ROOT/.rc"
+if [ -d "$GIT_SUBREPO_DIST_INSTALL" ]; then
+    source "$GIT_SUBREPO_DIST_INSTALL/.rc"
 fi
