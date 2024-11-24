@@ -150,3 +150,7 @@ if [ -d "$PYENV_ROOT" ]; then
 	eval "$(pyenv init -)"
 fi
 
+# git subrepo
+if [ -d "$GIT_SUBREPO_ROOT" ]; then
+    source "$GIT_SUBREPO_ROOT/.rc"
+fi
