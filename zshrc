@@ -135,6 +135,7 @@ fi
 
 # nvm
 if [ -s "$NVM_DIR/nvm.sh" ]; then
+    alias nvm-set-current-bin-use="NVM_SYMLINK_CURRENT=true nvm use"
 	\. "$NVM_DIR/nvm.sh"
 fi
 
