@@ -55,8 +55,10 @@ if (Get-Command Get-CimInstance -errorAction SilentlyContinue)
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
 Set-PSReadLineOption -PredictionSource Plugin
 
-if (Get-Command gpg-connect-agent -errorAction SilentlyContinue) {
-    Invoke-Expression "gpg-connect-agent reloadagent /bye" > $null
+if ($true -eq $PsPromptSettings.EnableGpgAgent) {
+    if (Get-Command gpg-connect-agent -errorAction SilentlyContinue) {
+        Invoke-Expression "gpg-connect-agent reloadagent /bye" > $null
+    }
 }
 
 if (Test-Path -Path "$env:VCPKG_ROOT") {
