@@ -2,6 +2,14 @@
 
 Import-Module posh-git
 
+$PsPromptSettings = new-object psobject -property @{
+   EnableGpgAgent = $false;
+}
+
+if (Test-Path -Path "$env:USERPROFILE/PsPrompt-Variables.ps1") {
+    . $env:USERPROFILE/PsPrompt-Variables.ps1
+}
+
 function isadmin {
     ([Security.Principal.WindowsPrincipal] `
             [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
