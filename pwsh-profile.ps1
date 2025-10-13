@@ -25,7 +25,7 @@ function admin {
     [Parameter(Mandatory=$false)]
     $prog = "pwsh"
     )
-    start $prog -Verb RunAs
+    Start-Process $prog -Verb RunAs
 }
 
 # Visual Studio dev powershell
@@ -37,7 +37,7 @@ if (Get-Command Get-CimInstance -errorAction SilentlyContinue)
 {
     $VsInfo = Get-CimInstance MSFT_VSInstance -Namespace root/cimv2/vs -WarningAction:SilentlyContinue -errorAction:SilentlyContinue
 
-    if ($VsInfo -ne $null) {
+    if ($null -ne $VsInfo) {
         function Vs-DevEnv {
             & "$($VsInfo.InstallLocation)\\Common7\\Tools\\Launch-VsDevShell.ps1" -Arch amd64 -HostArch amd64 -SkipAutomaticLocation
         }
