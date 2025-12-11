@@ -51,6 +51,12 @@ if [[ $(grep -i microsoft /proc/version) ]]; then
             $native_git_exec "$@"
         fi
     }
+
+    if [ "${ZSH_WSL_ALIAS_SSH_WITH_WINDOWS_SSH:-1}" -ne "0" ]; then
+        alias ssh='ssh.exe'
+        alias ssh-add='ssh-add.exe'
+    fi
+
 else
     function isWinDir {
         $(false)
